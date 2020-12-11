@@ -6,9 +6,9 @@
   "main": "dist/ts.lib.js",
   "browser": "dist/ts.lib.min.js",
   "scripts": {
-    "build": "npm run clean && rollup -c",
-    "start": "npm run clean && rollup -c -w",
-    "test": "jest --coverage",
+    "build": "npm run clean && rollup -c config/rollup.config.js",
+    "start": "npm run clean && rollup -c config/rollup.config.js -w",
+    "test": "jest --coverage --config=config/jest.config.js",
     "clean": "rimraf dist"
   },
   "author": "",

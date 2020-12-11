@@ -3,12 +3,12 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import htmlTemplate from "rollup-plugin-generate-html-template";
 import scss from "rollup-plugin-scss";
-import { name, src, main, browser } from "./package.json";
+import { name, src, main, browser } from "../package.json";
 
 const basePlugins = [
   nodeResolve(),
   commonjs({ extensions: [".js", ".ts"] }),
-  typescript(),
+  typescript({ tsconfig: "config/tsconfig.json" }),
 ];
 const libPlugins = [...basePlugins, scss()];
 const demoPlugins = [
