@@ -1,10 +1,11 @@
 /**
- * @param  {} selector
+ * @param  {string|HTMLElement} selector
+ * @returns HTMLElement
  */
-function $(selector: string | HTMLElement) {
+function $(selector: string | HTMLElement): HTMLElement {
   return selector instanceof HTMLElement
-    ? selector
-    : document.querySelector(selector);
+    ? (selector as HTMLElement)
+    : (document.querySelector(selector) as HTMLElement);
 }
 
 export { $ };
